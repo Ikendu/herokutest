@@ -1,0 +1,17 @@
+<br><br><br>
+<div class="container">
+  <h1><center>Product Details</center></h1>
+  <br>
+  <%= form_tag("/deco/create", {multipart: true}) do %>
+
+  <p><center>A breif description of the decoration picture</center></p>
+
+    <div class="mb-3">    
+      <textarea name="desc" class="form-control"></textarea>
+    </div>
+
+    <center><button type="submit" class="btn btn-primary">Submit</button></center>
+    <br><br><br>
+
+  <% end %>
+</div>

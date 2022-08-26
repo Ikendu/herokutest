@@ -1,0 +1,27 @@
+
+<br><br>
+<div class="container">
+ <h1>TG Konet Decorations</h1>
+  <p>welcome to our Deco Gallary</p>
+  <p>we are here to make your special day awesome, beautiful, blizful and memorable</p>
+</div>
+<div class="w3-container ">
+<% @posts.each do |post| %>
+
+  <div class="w3-card float-start reduce view" >
+  	<a href="<%= "/deco_files/#{post.deco_image}" %>">
+      <img src="<%= "/deco_files/#{post.deco_image}" %>" alt="Person" style="width:100%">
+    </a>
+    <div class="w3-container">
+      <h4><b>TG</b></h4>
+      <p><%= post.desc %></p>
+    </div>
+  <% if @current_user %>
+  <%= link_to "Edit", "/deco/#{post.id}/edit", class: "btn btn-primary btn-sm float-start marg"%>
+  <%= button_to "Delete", "/deco/#{post.id}/destroy", method: :post, class: "btn btn-danger marg float-start btn-sm "%>
+  <% end %>
+
+  </div>
+
+  <% end %>
+</div>

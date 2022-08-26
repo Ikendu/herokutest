@@ -1,0 +1,21 @@
+<br><br>
+<div class="container">
+
+    <h1><center>Edit Page</center></h1>
+
+    <%= form_tag("/deco/#{@post.id}/update", {multipart: true}) do %>
+      <div class="mb-3">
+        <input class="form-control" type="file" id="formFile" name="image">
+      </div>
+
+      <div class="mb-3">    
+      
+        <textarea name="desc" class="form-control"><%= @post.desc %></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+    <% end %>
+
+    
+</div>

@@ -1,0 +1,69 @@
+<nav id="nav1" class="navbar navbar-expand-lg  navbar-dark" >
+  <div class="container-fluid">
+
+   <%= link_to root_path do %>
+    <%= image_tag "/logo.jpg", class: "navbar-brand logo" %>
+	<% end%>
+
+    <%= link_to("Konet", root_path, class: "navbar-brand")%>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="header-right">
+      	
+        <li class="nav-item">
+          <%= link_to "Hair", "/hair", class: "nav-link active"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Decoration", "/deco/page", class: "nav-link active"%>
+          
+        </li>
+       
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            See more
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "About", "/about", class: "dropdown-item" %><li>
+            <li><%= link_to "Admin", "/admin", class: "dropdown-item" %></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Software Dev</a></li>
+            
+          </ul>
+        </li>
+         <% if @current_user %>
+         <li class="nav-item nav-link">
+          Welcome <%= @current_user.name %> 
+         </li>
+         <% end %>
+
+       
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+
+      <ul class="navbar-nav  mb-2 mb-lg-0 d-flex">
+      	<li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/about">About</a>
+        </li>
+
+         
+
+        <% if session[:user_id] %>
+        <li class="nav-item btn">
+          <%= link_to "New Hair", "/new", class: "btn btn-primary btn-sm"%>
+          <%= link_to "New Deco", "/deco/new", class: "btn btn-primary btn-sm" %>
+        </li>
+        <li class="nav-item btn">
+          <%= button_to("Logout", "/logout", method: :post, class: "btn btn-sm btn-warning")  %>
+        </li>
+        <% end %>
+      </ul>
+
+    </div>
+  </div>
+</nav>

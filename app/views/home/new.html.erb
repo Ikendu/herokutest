@@ -1,0 +1,26 @@
+<br><br>
+<div class="container">
+  <h1><center>Product Details</center></h1>
+  <br>
+  <%= form_tag("/home/add", {multipart: true}) do %>
+
+    <div class="mb-3">    
+      <input name="name" class="form-control" id="exampleFormControlInput1" placeholder="Product Name">
+    </div>
+
+    <div class="mb-3"> 
+      <input name="makers" class="form-control" id="exampleFormControlInput1" placeholder="Product Make">
+    </div>
+
+    <div class="mb-3">   
+      <input name="color" class="form-control" id="exampleFormControlInput1" placeholder="Product Color">
+    </div>
+
+    <div class="mb-3">
+      <input name="price" class="form-control" id="exampleFormControlInput1" placeholder="Price">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+  <% end %>
+</div>

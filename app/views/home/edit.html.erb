@@ -1,0 +1,31 @@
+<br><br>
+<div class="container">
+
+    <h1><center>Edit Page</center></h1>
+
+    <%= form_tag("/home/#{@create.id}/update", {multipart: true}) do %>
+      <div class="mb-3">
+        <input class="form-control" type="file" id="formFile" name="image">
+      </div>
+
+      <div class="mb-3">    
+        <input name="name" value="<%= @create.name %>" class="form-control" id="exampleFormControlInput1" >
+      </div>
+
+      <div class="mb-3"> 
+        <input name="makers" value="<%= @create.makers %>" class="form-control" id="exampleFormControlInput1">
+      </div>
+
+      <div class="mb-3">   
+        <input name="color" value="<%= @create.color %>" class="form-control" id="exampleFormControlInput1">
+      </div>
+
+      <div class="mb-3">
+        <input name="price" value="<%= @create.price %>" class="form-control" id="exampleFormControlInput1">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+       <%= link_to "Cancel", "/hair", class: "btn btn-warning marg float-startd" %>
+
+    <% end %>
+</div>
