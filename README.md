@@ -2,7 +2,7 @@
 
 With this website Admin can create, Edit and Delete a Product or Service.
 
-You can view the full funtionality of the site  @ https://businesswithus.herokuapp.com/ 
+You can view the full funtionality of the site  @ https://konetus.herokuapp.com/ 
 if you want admin previlages chat me up or call me on 08061632276.
 
 
